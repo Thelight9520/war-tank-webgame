@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WarTanks</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url(".dist/1000_F_569643773_748ECcsUWaK7qXHkcWImfqap70lMTR2K (1).jpg");
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+        h1 {
+            color: white;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            color: aqua;
+            max-width: 80%;
+        }
+        button {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 30px;
+            background-color: transparent;
+            padding: 30px 100px;
+            border-radius: 50px; 
+            color: white; 
+            border: 2px solid white;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <h1>Welcome to WarTanks</h1>
+    <p>Prepare for an intense battle experience. Click below to start!</p>
+    <button class="button" id="play">Start Game</button>
+    <button class="button" id="help">Help</button>
+    <button class="button" id="Exit">Exit</button>
+    <script src="game.js"></script>
+<audio src=".dist/The Tread of War - MP3.mp3"  autoplay muted ></audio>
+</body>
+</html>

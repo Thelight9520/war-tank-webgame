@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WarTanks</title>
+    <style>
+                body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url(".dist/battle-tanks-with-city-fire-background-military-army-special-operation_505557-13990.avif");
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+        canvas {
+            
+            border: 5px solid black;
+            background-image: url(.dist/sand-texture-background-nature-beach-sandy-top-view-desert-sand-done-photo.jpg);
+
+        }
+        #scoreboard { 
+            position:absolute;
+            top: 10px; 
+            left: center; 
+            color: rgb(187, 255, 0); 
+            font-family: Arial, sans-serif;
+            font-size: 30px;
+        }
+        .game-over-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 100;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid red;
+}
+
+.game-over-text h1 {
+    font-size: 4rem;
+    margin: 0;
+    color: #ff5555;
+    animation: pulse 1.5s infinite;
+}
+
+.game-over-text p {
+    font-size: 2rem;
+    margin: 0.5rem 0 1.5rem;
+    color: white;
+}
+
+.game-over-buttons button {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.game-over-buttons button:hover {
+    background: #666;
+}
+
+#resetButton {
+    background-color: green !important;
+}
+
+#closeButton {
+    background-color: red !important;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+.game-over-text {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.game-over-text.show {
+    display: block;
+    opacity: 1;
+}
+    </style>
+</head>
+<body> 
+   
+    <canvas id="canvas" height="600" width="900"></canvas>
+    <div id="scoreboard" >Player 1: 0 - Player 2: 0</div>
+    <div id="gameOverText" class="game-over-text">
+        <h1>GAME OVER</h1>
+        <p id="winnerText">Player 1 Wins!</p>
+        <div class="game-over-buttons">
+            <button id="resetButton" style="background-color: green;color: white; padding-left: 10px;border-radius: 10px;padding: 15px;">Reset</button>
+            <button id="closeButton" style="background-color: red;color: white; padding-left: 10px ;border-radius: 10px; padding: 15px;">Close</button>
+        
+        </div>
+    </div>
+    <button id="musicToggle" style="position: absolute; top: 10px; right: 10px; z-index: 100; padding: 5px 10px; background: rgba(0,0,0,0.5); color: white; border: 1px solid white;">
+        Music: ON
+    </button>
+    <audio id="backgroundMusic" loop>
+        <source src=".dist/fight_looped.wav" type="audio/mpeg" loop>
+      </audio>
+      <audio id="shootSound">
+        <source src=".dist/cannon_fire.ogg" type="audio/wav">
+      </audio>
+      <audio id="hitSound">
+        <source src=".dist/424911-impactshort78.wav" type="audio/wav">
+      </audio>
+    <script src="WarTanks.js"></script>
+</body>
+</html>
